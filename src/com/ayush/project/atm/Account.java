@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public abstract class Account {
 	
-	private int accno;
-	private int pin;
-	private double balance;
+	protected int accno;
+	protected int pin;
+	protected double balance;
 	
 	public Account(int accno, int pin, double balance) {
 		this.accno = accno;
