@@ -2,8 +2,8 @@ package com.ayush.project.atm;
 
 public class SavingAccount extends Account {
 	
-	public SavingAccount(int accno, int pin, double balance){
-		super(accno, pin, balance);
+	public SavingAccount(String name, int pin, double balance){
+		super(name, pin, balance);
 	}
 	
 	public String getAccountType() {

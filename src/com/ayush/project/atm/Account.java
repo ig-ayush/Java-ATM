@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public abstract class Account {
 	
-	protected int accno;
+	protected String name;
 	protected int pin;
 	protected double balance;
 	
-	public Account(int accno, int pin, double balance) {
-		this.accno = accno;
+	public Account(String name, int pin, double balance) {
+		this.name = name;
 		this.pin = pin;
 		this.balance = balance;
 	}
@@ -21,8 +21,8 @@ public abstract class Account {
 		return false;
 	}
 	
-	public int getAccountNo() {
-		return accno;
+	public String getAccountNo() {
+		return name;
 	}
 	
 	public void Deposit(double amount) {
