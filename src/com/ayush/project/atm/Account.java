@@ -37,22 +37,23 @@ public abstract class Account {
 	
 	@SuppressWarnings("resource")
 	public void withdraw(double amount) {
-		Scanner sc = new Scanner(System.in); 
+//		Scanner sc = new Scanner(System.in); 
 		if(amount > balance) {
 			System.out.println("INSUFFICIENT BALANCE");
 		} else if(amount == balance) {
 			System.out.println("THIS WITHDRAW MAKE YOUR BALANCE 0");
-			System.out.println("WANT TO CONTINUE (Y/N)");
-			String no = sc.next();
-			if(no.equalsIgnoreCase("no") || no.equalsIgnoreCase("n")) {
-				return;
-			}
+//			System.out.println("WANT TO CONTINUE (Y/N)");
+//			String no = sc.next();
+//			if(no.equalsIgnoreCase("no") || no.equalsIgnoreCase("n")) {
+//				return;
+//			}
 			
+		} else {
 			balance -= amount;
-			System.out.println("YOUR ₹" + amount + " IS WITHDRAW FROM YOUR ACCOUNT.");
+			System.out.println("YOUR ₹" + amount + " IS WITHDRAW FROM YOUR ACCOUNT.");			
 		}
 		
-		sc.close();
+//		sc.close();
 	}
 	
 	public abstract String getAccountType();

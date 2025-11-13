@@ -28,7 +28,7 @@ public class Operations {
 				break;
 			}
 			
-			int accno = Integer.parseInt(input);
+			int accno = Integer.parseInt(input.trim());
 			
 			Account acc = account.get(accno);
 			
@@ -47,7 +47,6 @@ public class Operations {
 				continue;
 			} 
 			
-			sc.close();
 			
 			menu(acc);
 		}
@@ -58,12 +57,14 @@ public class Operations {
 	//DEPOSIT	
 	public void deposit(Account acc) {
 		double amount = sc.nextDouble();
+		System.out.println("ENTER THE AMOUNT:");
 		acc.Deposit(amount);
 		System.out.println("YOUR PRESENT BALANCE IS: " + acc.balance);
 	}
 	
 	//WITHDRAW	
 	public void withdraw(Account acc) {
+		System.out.println("ENTER THE AMOUNT:");
 		double amount = sc.nextDouble();
 		acc.withdraw(amount);
 		System.out.println("YOUR PRESENT BALANCE IS: " + acc.balance);
@@ -73,6 +74,7 @@ public class Operations {
 	public void checkDetails(Account acc) {
 		String name = acc.name;
 		double balance = acc.balance;
+		System.out.println("DETAILS OF THE ACCOUNT HOLDER:");
 		System.out.println("ACCOUNT HOLDER: " + name);
 		System.out.println("ACCOUNT BALANCE: " + balance);
 	}
@@ -81,28 +83,31 @@ public class Operations {
 	public void menu(Account acc) {
 		
 		while(true) {
-			System.out.println("LOGGED IN: " + acc.name + " ACCOUNT (" + acc.getAccountType() + ")");
+			System.out.println("\nLOGGED IN: " + acc.name + " ACCOUNT (" + acc.getAccountType() + ")");
 			System.out.println("1] DEPOSIT");
 			System.out.println("2] WITHDRAW");
 			System.out.println("3] CHECK DETAILS");
 			System.out.println("4] LOGOUT");
 			System.out.println("CHOOSE YOUT OPTION:");
 			
-			char choice = sc.next().charAt(0);
+			int choice = sc.nextInt();
 			
 			switch(choice) {
 			
-				case '1' : deposit(acc);
+				case 1 : deposit(acc);
 				break;
 				
-				case '2' : withdraw(acc);
+				case 2 : withdraw(acc);
 				break;
 				
-				case '3' : checkDetails(acc);
+				case 3 : checkDetails(acc);
 				break;
 				
-				case '4' : System.out.println("THANK YOU!!");
-				break;
+				case 4 : System.out.println("THANK YOU!!");
+				return;
+				
+				default:
+					System.out.println("ENTER VALID CHOICE");
 			}
 			
 			
