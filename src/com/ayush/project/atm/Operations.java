@@ -45,13 +45,9 @@ public class Operations {
 			if(!validPin) {
 				System.out.println("Invalid PIN. Returning to main menu.");
 				continue;
-			} 
-			
-			
+			} 	
 			menu(acc);
 		}
-		
-		
 	}
 	
 	//DEPOSIT	
@@ -108,11 +104,7 @@ public class Operations {
 				
 				default:
 					System.out.println("ENTER VALID CHOICE");
-			}
-			
-			
-		}
-		
+			}	
+		}	
 	}
-	
 }
